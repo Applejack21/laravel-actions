@@ -1,0 +1,27 @@
+{
+    "name": "applejack21/laravel-actions",
+    "description": "Create action classes for models quickly and easily.",
+	"keywords": ["laravel", "actions", "action builder", "action classes"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Applejack21\\LaravelActions\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Applejack21"
+        }
+    ],
+	"require": {
+		"php": ">=8.0",
+		"doctrine/dbal": "^3.7.1"
+	},
+	"extra": {
+        "laravel": {
+            "providers": [
+                "Applejack21\\LaravelActions\\ServiceProvider"
+            ]
+        }
+    }
+}

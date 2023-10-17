@@ -50,7 +50,7 @@ class MakeDeleteFile
 			{
 				$permaVariable ? $$lowerModel ->forceDelete() : $$lowerModel ->delete();
 
-				return tap($$lowerModel)->refresh();
+				return $permaVariable ? true : tap($$lowerModel)->refresh();
 			}
 		}
 		EOT;

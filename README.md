@@ -10,15 +10,7 @@ As well as this, it'll generate validation rules for the model based on the tabl
 Requires [Laravel](https://laravel.com/ "Laravel").
 Use composer to install it as described below:
 ```
-$ composer require applejack21/laravel-actions
-```
-
-```json
-{
-    "require": {
-        "applejack21/laravel-actions": "*"
-    }
-}
+composer require applejack21/laravel-actions
 ```
 
 <a name="usage"></a>
@@ -33,6 +25,10 @@ The command also has a few arguments you can pass to customise it:
 - ``--perma-delete`` Whether the delete action class should have a perma delete option.
 
 The files are then put into the folder ``app\Actions\<model_name>``. If there are files already in this folder it'll prompt you to replace these with the ones generated instead.
+
+<a name="examples"></a>
+## Examples
+See the ``examples`` folder for a list of action files that have been generated using this command based on the default User model from Laravel. I shall try my best to remember to update the examples alongside code changes.
 
 <a name="suggestions"></a>
 ## Suggestions

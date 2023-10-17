@@ -28,11 +28,16 @@ class MakeDeleteFile
 
 		class Delete$modelName
 		{
-			public function execute($modelName $$lowerModel): $modelName
+			public function execute($modelName $$lowerModel): $modelName|bool
 			{
-				$$lowerModel ->delete();
+				\$deleted = $$lowerModel ->delete();
 
-				return tap($$lowerModel)->refresh();
+				// return the model if is utilises soft deletes as the record still exists
+				if(in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($$lowerModel)) && \$deleted === true) {
+					return tap($$lowerModel)->refresh();
+				}
+
+				return \$deleted;
 			}
 		}
 		EOT;
@@ -46,7 +51,7 @@ class MakeDeleteFile
 
 		class Delete$modelName
 		{
-			public function execute($modelName $$lowerModel, bool $permaVariable = false): $modelName
+			public function execute($modelName $$lowerModel, bool $permaVariable = false): $modelName|bool
 			{
 				$permaVariable ? $$lowerModel ->forceDelete() : $$lowerModel ->delete();
 

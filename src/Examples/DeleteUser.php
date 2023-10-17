@@ -6,10 +6,16 @@ use App\Models\User;
 
 class DeleteUser
 {
-	public function execute(User $user): User
+	public function execute(User $user): User|bool
 	{
-		$user->delete();
+		$deleted = $user->delete();
 
-		return tap($user)->refresh();
+		// return the model if is utilises soft deletes as the record still exists
+		if(in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($user)) && $deleted === true) {
+			return tap($user)->refresh();
+		}
+
+		return $deleted;
+
 	}
 }

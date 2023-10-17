@@ -23,10 +23,11 @@ class MakeReadFile
 		namespace App\Actions\\$modelName;
 
 		use App\\Models\\$modelName;
+		use Illuminate\Database\Eloquent\Collection;
 
 		class Get{$modelName}s
 		{
-			public function execute(): $modelName
+			public function execute(): Collection
 			{
 				return $modelName::all();
 			}

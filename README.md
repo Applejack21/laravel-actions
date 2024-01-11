@@ -33,3 +33,8 @@ See the ``examples`` folder for a list of action files that have been generated 
 <a name="suggestions"></a>
 ## Suggestions
 You're free to fork this and modify the code as you wish to add in your own extra functionality. However, if you have any suggestions that should be added to this package, do create an issue with the suggestion or even a PR with your modified code!
+
+<a name="todo"></a>
+## TODO
+- Update the code to use stubs rather than plain PHP EOL text. Be easier to manage that way
+- Allow users to copy stubs to allow them to edit however they see fit.

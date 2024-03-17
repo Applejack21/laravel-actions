@@ -38,3 +38,4 @@ You're free to fork this and modify the code as you wish to add in your own extr
 ## TODO
 - Update the code to use stubs rather than plain PHP EOL text. Be easier to manage that way
 - Allow users to copy stubs to allow them to edit however they see fit.
+- Update for Laravel 11.x to utilise new Schema functions (https://laravel.com/docs/11.x/releases#inspecting-database)
